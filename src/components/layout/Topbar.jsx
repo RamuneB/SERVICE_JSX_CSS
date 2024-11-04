@@ -1,37 +1,60 @@
+import { useNavigate, Link } from "react-router-dom";
+import { ROUTES } from "../../router/consts";
 import Button from "../common/Button";
 import styles from "./Topbar.module.scss";
+import Logo from "../../assets/logo.svg";
+import { useContext } from "react";
+
+import { UserContext } from '../../context/UserContext'; // Jei Topbar.jsx yra viename lygmenyje su context
+
+
+import Avatar from "../common/Avatar";
 
 const Topbar = () => {
+  //const { user } = useContext(UserContext);
+  const { user } = useContext(UserContext) || {};
+
+  const navigate = useNavigate();
+
   const links = [
     {
-      href: "#",
+      href: ROUTES.HOME,
       label: "Home",
     },
     {
-      href: "#",
+      href: ROUTES.SERVICES,
       label: "Services",
     },
     {
-      href: "#",
+      href: ROUTES.ABOUT_US,
       label: "About Us",
     },
   ];
   return (
-    <div className={styles.topbar}>
+    <header className={styles.topbar}>
       <div className={styles.leftSide}>
-        <img src="./logo.svg" alt="logo" />
+        <Link to={ROUTES.HOME}>
+          <img src={Logo} alt="logo" />
+        </Link>
         <nav className={styles.navigation}>
           {links.map((link) => (
-            <a key={link.label} href={link.href} className={styles.link}>
+            <Link key={link.label} to={link.href} className={styles.link}>
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>
       <div className={styles.rightSide}>
-        <Button>Login / Sign Up</Button>
+      
+      {user ? (
+          <Avatar>{user.email[0]}</Avatar>
+        ) : (
+          <Button onClick={() => navigate(ROUTES.LOGIN)} large>
+            Login / Sign Up
+          </Button>
+        )}
       </div>
-    </div>
+    </header>
   );
 };
 

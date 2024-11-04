@@ -9,14 +9,23 @@
   
     &:hover {
       background-color: #5b24e7;
+      justify-content: center;
+      align-items: center;
     }
   }
   
-  .rounded {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  // .rounded {
+  //   width: 4rem;
+  //   height: 4rem;
+  //   border-radius: 50%;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  // }
+  .large {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+  .small {
+    padding: 0.5rem 1rem;
   }

@@ -1,0 +1,28 @@
+.container {
+  padding: 2rem;
+  display: flex; /* Naudojame flexbox */
+  flex-direction:column; /* Išdėstome elementus vertikaliai */
+  align-items:flex-start; /* Išlygiavimas į kairę */
+  gap:2rem;
+
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.noCategory {
+  color: #ff4d4d;
+  font-size: 1.2rem;
+}
+.categoryList div {
+  width: 400px; /* Nustatykite norimą plotį */
+}
+
+.categoryList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Automatinis kortelių paskirstymas */
+  gap: 1rem;
+}
+
