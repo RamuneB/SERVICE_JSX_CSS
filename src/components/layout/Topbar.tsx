@@ -1,35 +1,23 @@
+import React from "react"; // Priedas
 import { useNavigate, Link } from "react-router-dom";
 import { ROUTES } from "../../router/consts";
 import Button from "../common/Button";
 import styles from "./Topbar.module.scss";
 import Logo from "../../assets/logo.svg";
 import { useContext } from "react";
-
-import { UserContext } from '../../context/UserContext'; // Jei Topbar.jsx yra viename lygmenyje su context
-
-
+import { UserContext } from '../../context/UserContext'; 
 import Avatar from "../common/Avatar";
 
 const Topbar = () => {
-  //const { user } = useContext(UserContext);
-  const { user } = useContext(UserContext) || {};
-
+  const { user } = useContext(UserContext) || {}; // UserContext naudojimas
   const navigate = useNavigate();
 
   const links = [
-    {
-      href: ROUTES.HOME,
-      label: "Home",
-    },
-    {
-      href: ROUTES.SERVICES,
-      label: "Services",
-    },
-    {
-      href: ROUTES.ABOUT_US,
-      label: "About Us",
-    },
+    { href: ROUTES.HOME, label: "Home" },
+    { href: ROUTES.SERVICES, label: "Services" },
+    { href: ROUTES.ABOUT_US, label: "About Us" },
   ];
+
   return (
     <header className={styles.topbar}>
       <div className={styles.leftSide}>
@@ -45,9 +33,8 @@ const Topbar = () => {
         </nav>
       </div>
       <div className={styles.rightSide}>
-      
-      {user ? (
-          <Avatar>{user.email[0]}</Avatar>
+        {user ? (
+          <Avatar>{user.email ? user.email[0] : "U"}</Avatar>
         ) : (
           <Button onClick={() => navigate(ROUTES.LOGIN)} large>
             Login / Sign Up

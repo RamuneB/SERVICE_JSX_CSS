@@ -1,9 +1,17 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../router/consts"; // Patikrinkite, ar kelias yra teisingas
 import CategoryCard from "./CategoryCard";
 import styles from "./CategoryList.module.scss";
 
-const categories = [
+// Tipizuojame kategorijų objektų struktūrą
+interface Category {
+  name: string;
+  color: string;
+  url: string;
+}
+
+const categories: Category[] = [
   {
     name: "cleaning",
     color: "#b12fde",
@@ -36,17 +44,18 @@ const categories = [
   },
 ];
 
-const CategoryList = () => {
+const CategoryList: React.FC = () => {
   const navigate = useNavigate();
 
-  const handleCategoryClick = (category) => {
+  const handleCategoryClick = (category: Category) => {
     if (!ROUTES.VERTICAL_CATEGORY_LIST) {
       console.error("ROUTES.VERTICAL_CATEGORY_LIST is undefined. Check your routes configuration.");
       return;
     }
-    
-    // Nukreipiame naudotoją į VerticalCategoryList puslapį su kategorijos pavadinimu URL parametre
-    navigate(`${ROUTES.VERTICAL_CATEGORY_LIST.replace(":categoryName", category.name)}`);
+
+    // Tikriname, ar maršrutas tinkamas
+    const categoryPath = ROUTES.VERTICAL_CATEGORY_LIST.replace(":categoryName", category.name);
+    navigate(categoryPath);
   };
 
   return (

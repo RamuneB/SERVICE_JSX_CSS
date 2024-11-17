@@ -1,24 +1,28 @@
-import styles from "./Login.module.scss";
-
-//import Button from "@/components/common/Button";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useContext } from "react";  // Pridėkite React importą
+import { useNavigate, Link } from "react-router-dom";
 import { ROUTES } from "../router/consts";
-import { useContext, useState } from "react";
-import { UserContext } from "../context/UserContext";
+import { useUser } from "../context/UserContext"; // Importuojame `useUser`
 import Input from "../components/common/Input";
 import Button from "../components/common/Button";
-
+import styles from "./Login.module.scss";
 
 const Login = () => {
-  const { login } = useContext(UserContext);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { login } = useUser(); // Naudojame useUser, kad gautume kontekstą
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   const navigate = useNavigate();
-  const handleSubmit = (event) => {
+
+  const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    login({ email, password });
-    navigate(ROUTES.HOME);
+    if (email && password) {
+      // Pridėkite tiek email, tiek password
+      login({ email, password });
+      navigate(ROUTES.HOME);
+    } else {
+      alert("Please fill in both fields.");
+    }
   };
+
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit} className={styles.form}>

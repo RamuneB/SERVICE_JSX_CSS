@@ -1,3 +1,4 @@
+import React from "react";  // Pridėkite React importą
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
@@ -34,10 +35,9 @@ const router = createBrowserRouter([
         element: <SearchCategory />,
       },
       {
-        path: ROUTES.VERTICAL_CATEGORY_LIST, // Pridedame maršrutą su parametrų kategorijai
+        path: ROUTES.VERTICAL_CATEGORY_LIST, // Maršrutas su kategorijų parametrų apdorojimu
         element: <VerticalCategoryList />,
       },
-     
     ],
   },
   {

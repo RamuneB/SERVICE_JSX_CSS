@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React, { useState } from "react";
+
 import { useParams } from "react-router-dom";
 import { categories } from "../components/consts/category";
 import BusinessList from "../components/home/BusinessList";

@@ -1,10 +1,9 @@
 .container {
   padding: 2rem;
-  display: flex; /* Naudojame flexbox */
-  flex-direction:column; /* Išdėstome elementus vertikaliai */
-  align-items:flex-start; /* Išlygiavimas į kairę */
-  gap:2rem;
-
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
 }
 
 .title {
@@ -16,13 +15,39 @@
   color: #ff4d4d;
   font-size: 1.2rem;
 }
+
+.categoryList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+  gap: 1rem;
+  width: 100%; /* Kad grid užimtų visą tėvo plotį */
+}
+
+.categoriesWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
 .categoryList div {
   width: 400px; /* Nustatykite norimą plotį */
 }
 
-.categoryList {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Automatinis kortelių paskirstymas */
-  gap: 1rem;
+.categoryList div:hover {
+  transform: scale(1.05);
 }
 
+.selected {
+  border: 2px solid #4CAF50;  /* Žymėti pasirinktas kategorijas */
+  background-color: #f0f0f0;
+}
+
+.businessList {
+  width: 100%;
+}
+
+.businessList p {
+  font-size: 1.2rem;
+  color: #888;
+}

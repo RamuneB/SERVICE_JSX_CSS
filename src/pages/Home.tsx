@@ -1,6 +1,5 @@
-
-//import Hero from "../components/common/Hero";
-import Hero from "../components/home/hero";
+import React from "react";  // Pridėkite šią eilutę
+import Hero from "../components/home/Hero";
 import CategoryList from "../components/home/CategoryList";
 import BusinessList from "../components/home/BusinessList";
 import styles from "./Home.module.scss";
