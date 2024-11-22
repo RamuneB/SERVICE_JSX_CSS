@@ -1,4 +1,4 @@
-import React from "react";  // Pridėkite React importą
+import React from "react";  
 import classNames from "classnames";
 import styles from "./Button.module.scss";
 
