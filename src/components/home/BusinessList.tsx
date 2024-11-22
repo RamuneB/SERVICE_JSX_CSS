@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import axios from "axios";
 import { businesses } from "../consts/business";
 import BusinessCard from "./BusinessCard";
 import styles from "./BusinessList.module.scss";
