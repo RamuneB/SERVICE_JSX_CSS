@@ -1,4 +1,4 @@
-import React from "react";  // Būtinas importas
+import React from "react";  
 import classNames from "classnames";
 import styles from "./Input.module.scss";
 
@@ -8,4 +8,4 @@ const Input: React.FC<InputProps> = ({ className, ...props }) => {
   return <input className={classNames(styles.input, className)} {...props} />;
 };
 
-export default Input;  // Eksportuojame komponentą
+export default Input; 
