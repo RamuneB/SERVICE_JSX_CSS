@@ -2,6 +2,7 @@
 
 * {
   font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
 }
 
 html,
@@ -134,4 +135,10 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+input:focus-visible {
+  outline-color:burlywood;
+}
+#root {
+  height: 100vh;
 }
