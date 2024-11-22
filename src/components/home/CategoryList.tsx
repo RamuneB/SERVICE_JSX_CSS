@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { ROUTES } from "../../router/consts"; // Patikrinkite, ar kelias yra teisingas
+import { ROUTES } from "../../router/consts";
 import CategoryCard from "./CategoryCard";
 import styles from "./CategoryList.module.scss";
 
