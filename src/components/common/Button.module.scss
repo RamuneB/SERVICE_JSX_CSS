@@ -1,6 +1,6 @@
 .button {
     padding: 1rem 1.5rem;
-    background-color: #8056eb;
+    background-color: #eb569c;
     color: #ffffff;
     border: none;
     border-radius: 8px;
@@ -8,15 +8,17 @@
     cursor: pointer;
   
     &:hover {
-      background-color: #5b24e7;
+      background-color: #a197ba;
+      justify-content: center;
+      align-items: center;
     }
   }
   
-  .rounded {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  
+  .large {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+  .small {
+    padding: 0.5rem 1rem;
   }
